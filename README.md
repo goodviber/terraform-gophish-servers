@@ -19,37 +19,37 @@ terraform plan
 terraform apply
 ```
 
-# in LOCALHOST to get IPs (may take up to 30 seconds before IPs come up):
+## in LOCALHOST to get IPs (may take up to 30 seconds before IPs come up):
 
 virsh net-dhcp-leases ${VM_HOSTNAME}\_network
 
-# ssh into VMs
+## ssh into VMs
 
 ssh ${VM_USER}@ip_address
 
-# check postfix installed (plus other services)
+## check postfix installed (plus other services)
 
 service --status-all
 
-# to get cloud-init build log (check for error messages in build)
+## to get cloud-init build log (check for error messages in build)
 
 sudo tail cloud-init.log
 
-# to get gophish initial password when running cloud_init.cfg
+## to get gophish initial password when running cloud_init.cfg
 
 cd /var/log
 sudo tail -n 200 cloud-init-output.log
 
-# to check postfix mail log
+## to check postfix mail log
 
 cd /var/log
 sudo tail mail.log
 
-# access gophish on libvirt(localhost)
+## access gophish on libvirt(localhost)
 
 get ip address (e.g. 10.10.10.179) and call 'https://<ip address>:3333' in browser
 
-# to send test email with gmail as the final relay from gophish, setup the following in cloud_init.cfg (currently at line 30), ensure the gmail account you use has less_secure apps enabled. The format is user:password for gmail.
+## to send test email with gmail as the final relay from gophish, setup the following in cloud_init.cfg (currently at line 30), ensure the gmail account you use has less_secure apps enabled. The format is user:password for gmail.
 
 ```
 
@@ -74,7 +74,7 @@ This demonstrates that you are sending an email through postfix (localhost:25) t
 
 Issues can be tracked in the logs referenced above.
 
-# exit then run
+## exit then run
 
 ```
 terraform destroy
@@ -86,6 +86,6 @@ http://flurdy.com/docs/postfix/
 https://www.exratione.com/2019/02/a-mailserver-on-ubuntu-18-04-postfix-dovecot-mysql/
 https://www.linuxbabe.com/mail-server/setup-basic-postfix-mail-sever-ubuntu
 
-# This might be an alternative for server 2:
+## This might be an alternative for server 2:
 
 https://www.linuxbabe.com/mail-server/ubuntu-18-04-iredmail-email-server
