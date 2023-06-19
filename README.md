@@ -19,7 +19,7 @@ terraform plan
 terraform apply
 ```
 
-## in LOCALHOST to get IPs (may take up to 30 seconds before IPs come up):
+## in localhost to get IPs (may take up to 30 seconds before IPs come up):
 
 virsh net-dhcp-leases ${VM_HOSTNAME}\_network
 
